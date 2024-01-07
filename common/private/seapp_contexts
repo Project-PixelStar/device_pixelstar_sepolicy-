@@ -1,4 +1,5 @@
 user=_app isPrivApp=true seinfo=mediashell domain=mediashell_app name=com.google.android.apps.mediashell type=app_data_file levelFrom=all
-user=_app isPrivApp=true seinfo=platform name=org.aospb.updater domain=updater_app type=privapp_data_file levelFrom=user
-user=_app isPrivApp=true seinfo=platform name=org.aospb.updater.* domain=updater_app type=privapp_data_file levelFrom=user
-user=_app isPrivApp=true seinfo=platform name=org.aospb.updater:* domain=updater_app type=privapp_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=platform name=org.pixelstar.updater domain=updater_app type=privapp_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=platform name=org.pixelstar.updater.* domain=updater_app type=privapp_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=platform name=org.pixelstar.updater:* domain=updater_app type=privapp_data_file levelFrom=user
+user=_app isPrivApp=true seinfo=platform name=com.pixelstar.updater domain=updater_app type=app_data_file levelFrom=user

@@ -56,3 +56,9 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/turbo_adapter
 endif
+
+ifneq ($(BOARD_USES_QCOM_HARDWARE), true)
+# Microsoft
+BOARD_SEPOLICY_DIRS += \
+    device/pixelstar/sepolicy/common/private/microsoft
+endif

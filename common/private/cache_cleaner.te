@@ -1,0 +1,21 @@
+# Cache cleaner
+type cache_cleaner, coredomain, mlstrustedsubject, domain;
+type cache_cleaner_exec, exec_type, system_file_type, file_type;
+
+init_daemon_domain(cache_cleaner)
+
+domain_auto_trans(init, shell_exec, cache_cleaner)
+
+allow cache_cleaner cache_cleaner_exec:file { rx_file_perms entrypoint };
+
+# Allow cache cleaner to remove caches
+allow cache_cleaner cache_file:dir { rmdir rw_dir_perms };
+allow cache_cleaner resourcecache_data_file:dir { rmdir rw_dir_perms };
+
+# Allow cache cleaner to get ro.system.build.date.utc
+get_prop(cache_cleaner, build_prop)
+# Allow cache cleaner to get persist.sys.device_provisioned
+get_prop(cache_cleaner, provisioned_prop)
+# Allow cache cleaner to get/set persist.prev.build.date.utc
+get_prop(cache_cleaner, cache_cleaner_prop)
+set_prop(cache_cleaner, cache_cleaner_prop)
